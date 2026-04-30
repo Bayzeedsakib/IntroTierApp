@@ -1,4 +1,5 @@
-﻿using DAL.Repository;
+﻿using DAL.EF.Tables;
+using DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,29 @@ namespace BLL.Services
 {
     public class DepartmentService
     {
-        DepartmentRepo repo;
+        DepartmentRepo DepartmentRepo;
         public DepartmentService(DepartmentRepo repo)
         {
-            this.repo = repo;
+            this.DepartmentRepo = repo;
         }
 
-        public Object Get()
+        public List<Department> Get()
         {
-            repo.Get();
+            return DepartmentRepo.Get();
 
-            return new object();
+            //return new object();
         }
 
         public Object Get(int id)
         {
-            repo.Get(id);
+            DepartmentRepo.Get(id);
 
             return new object();
         }
 
         public Object Create()
         {
-            repo.Create();
+            DepartmentRepo.Create();
 
             return new object();
         }
