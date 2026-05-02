@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCAppLayer", "MVCAppLayer\MVCAppLayer.csproj", "{B327AE3E-0D79-409C-9718-69C5F516140A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C09604F-9313-4E4D-82BD-95B9C6696172} = {5C09604F-9313-4E4D-82BD-95B9C6696172}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8AFFB05A-F713-48A8-B5EE-D6E1F5251332}"
 EndProject

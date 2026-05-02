@@ -1,7 +1,18 @@
+using BLL.Services;
+using DAL.EF;
+using DAL.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<DepartmentRepo>();
+builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddDbContext<StudentMsBsp26Context>(opt =>
+{
+opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConn"));
+});
 
 var app = builder.Build();
 
