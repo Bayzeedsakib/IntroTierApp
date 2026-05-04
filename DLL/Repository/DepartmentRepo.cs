@@ -21,14 +21,9 @@ namespace DAL.Repository
             return db.Departments.ToList();
         }
 
-        public Object Get(int id)
+        public Department GetById(int id)
         {
-            return new object();
-        }
-
-        public Object Create()
-        {
-            return new object();
+            return db.Departments.Find(id);
         }
     }
 }

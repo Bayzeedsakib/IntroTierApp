@@ -19,14 +19,14 @@ namespace MVCAppLayer.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var data = service.Get();
+            var data = service.GetById();
             return View(data);
         }
 
-        public IActionResult Create()
+        public IActionResult GetById(int id)
         {
-            var res = service.Create();
-            return View(res);
+            var data = service.GetById(id);
+            return View(data);
         }
     }
 }
