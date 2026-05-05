@@ -25,5 +25,19 @@ namespace DAL.Repository
         {
             return db.Departments.Find(id);
         }
+
+        public bool Create(Department d)
+        {
+            db.Departments.Add(d);
+
+            return db.SaveChanges() > 0;
+        }
+
+        public bool Update(Department d)
+        {
+            var exobj = GetById(d.Id);
+            db.Entry(exobj).CurrentValues.SetValues(d);
+            return db.SaveChanges() > 0;
+        }
     }
 }

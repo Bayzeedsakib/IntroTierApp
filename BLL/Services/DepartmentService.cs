@@ -35,7 +35,16 @@ namespace BLL.Services
             return mapper.Map<DepartmentDTO>(data);
         }
 
-        
+        public bool Create(DepartmentDTO d)
+        {
+            var data = mapper.Map<Department>(d);
+            return repo.Create(data);
+        }
 
+        public bool Update(DepartmentDTO d)
+        {
+            var data = mapper.Map<Department>(d);
+            return repo.Update(data);
+        }
     }
 }
